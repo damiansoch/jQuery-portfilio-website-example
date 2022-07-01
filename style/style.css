@@ -6,7 +6,7 @@
 }
 
 html {
-  font-family: 'Spectral', serif;
+  font-family: "Spectral", serif;
   font-size: 62.5%;
 }
 
@@ -29,7 +29,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .5rem 2rem .5rem 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -40,7 +40,7 @@ nav {
 nav h4 {
   -ms-flex-preferred-size: 5rem;
       flex-basis: 5rem;
-  font-family: 'Aguafina Script', cursive;
+  font-family: "Aguafina Script", cursive;
   font-size: 3rem;
 }
 
@@ -74,7 +74,7 @@ nav ul li {
 
 nav ul .underline {
   width: 0px;
-  height: .5px;
+  height: 0.5px;
   background-color: black;
 }
 
@@ -84,13 +84,15 @@ nav ul .underline {
   display: flex;
 }
 
-#home .left-panel, #home .right-panel {
+#home .left-panel,
+#home .right-panel {
   width: 50%;
   height: 100vh;
   overflow: hidden;
 }
 
-#home .left-panel img, #home .right-panel img {
+#home .left-panel img,
+#home .right-panel img {
   width: 100%;
   -webkit-filter: grayscale(1) brightness(0.4);
           filter: grayscale(1) brightness(0.4);
@@ -99,7 +101,8 @@ nav ul .underline {
      object-fit: cover;
 }
 
-#home .left-panel .active, #home .right-panel .active {
+#home .left-panel .active,
+#home .right-panel .active {
   -webkit-filter: grayscale(0) brightness(0.6);
           filter: grayscale(0) brightness(0.6);
 }
@@ -138,7 +141,7 @@ nav ul .underline {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #5B595D;
+  background-color: #b4b4b4;
 }
 
 #about .slideshow_container {
@@ -183,13 +186,13 @@ nav ul .underline {
 #about .cards_container .card {
   width: 20rem;
   height: 25rem;
-  background-color: darkslategrey;
+  background-color: #5b595d;
   position: relative;
   overflow: hidden;
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
-  transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
 #about .cards_container .card .top {
@@ -197,7 +200,7 @@ nav ul .underline {
   top: 0;
   left: 0;
   width: 100%;
-  height: .5px;
+  height: 1px;
   background-color: white;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -207,7 +210,7 @@ nav ul .underline {
   position: absolute;
   top: 0;
   right: 0;
-  width: .5px;
+  width: 1px;
   height: 100%;
   background-color: white;
   -webkit-transform: translateY(-25rem);
@@ -219,7 +222,7 @@ nav ul .underline {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: .5px;
+  height: 1px;
   background-color: white;
   -webkit-transform: translateX(-20rem);
           transform: translateX(-20rem);
@@ -229,10 +232,62 @@ nav ul .underline {
   position: absolute;
   top: 0;
   left: 0;
-  width: .5px;
+  width: 1px;
   height: 100%;
   background-color: white;
   -webkit-transform: translateY(25rem);
           transform: translateY(25rem);
+}
+
+.gallery_window {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.gallery_window .gallery {
+  height: 100vh;
+  width: 300%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gallery_window .gallery .screen {
+  height: 100%;
+  width: 33.33%;
+}
+
+.gallery_window .gallery .screen1 {
+  background-color: aqua;
+}
+
+.gallery_window .gallery .screen2 {
+  background-color: #01682f;
+}
+
+.gallery_window .gallery .screen3 {
+  background-color: #540368;
+}
+
+.gallery_window .arrow {
+  color: black;
+  font-size: 5rem;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+.gallery_window .left {
+  left: 2rem;
+}
+
+.gallery_window .right {
+  right: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
