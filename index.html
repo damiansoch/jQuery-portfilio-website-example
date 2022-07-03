@@ -46,12 +46,12 @@
         </li>
 
         <li class="nav-links" id="galleryLink">
-          <a href="gallery">Gallery</a>
+          <a href="#gallery">Gallery</a>
           <div class="underline underlineGallery"></div>
         </li>
 
         <li class="nav-links" id="contactLink">
-          <a href="contact">Contact</a>
+          <p id="contact_button">Contact</p>
           <div class="underline underlineContact"></div>
         </li>
       </ul>
@@ -128,18 +128,45 @@
       </div>
       <div class="cards_container">
         <div class="card1 card">
+          <i class="fa-solid fa-code"></i>
+          <h2 class="card_title">
+            Egzample <br />
+            title
+          </h2>
+          <p class="card_text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repellendus, dolores.
+          </p>
           <div class="top top1"></div>
           <div class="right right1"></div>
           <div class="bottom bottom1"></div>
           <div class="left left1"></div>
         </div>
         <div class="card2 card">
+          <i class="fa-solid fa-scroll"></i>
+          <h2 class="card_title">
+            Egzample <br />
+            title
+          </h2>
+          <p class="card_text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repellendus, dolores.
+          </p>
           <div class="top top2"></div>
           <div class="right right2"></div>
           <div class="bottom bottom2"></div>
           <div class="left left2"></div>
         </div>
         <div class="card3 card">
+          <i class="fa-solid fa-arrow-up-from-bracket"></i>
+          <h2 class="card_title">
+            Egzample <br />
+            title
+          </h2>
+          <p class="card_text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repellendus, dolores.
+          </p>
           <div class="top top3"></div>
           <div class="right right3"></div>
           <div class="bottom bottom3"></div>
@@ -147,22 +174,70 @@
         </div>
       </div>
     </div>
-    <div class="gallery_window">
+    <div class="gallery_window" id="gallery">
       <div class="gallery">
-        <div class="screen screen1">
-          <div class="slide slide1"></div>
-          <div class="slide slide2"></div>
-          <div class="slide slide3"></div>
+        <div class="slide slide1">
+          <div class="slide_image_container1 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
         </div>
-        <div class="screen screen2">
-          <div class="slide slide4"></div>
-          <div class="slide slide5"></div>
-          <div class="slide slide6"></div>
+        <div class="slide slide2">
+          <div class="slide_image_container2 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
         </div>
-        <div class="screen screen3">
-          <div class="slide slide7"></div>
-          <div class="slide slide8"></div>
-          <div class="slide slide9"></div>
+        <div class="slide slide3">
+          <div class="slide_image_container3 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
+        </div>
+        <div class="slide slide4">
+          <div class="slide_image_container4 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
+        </div>
+        <div class="slide slide5">
+          <div class="slide_image_container5 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
+        </div>
+        <div class="slide slide6">
+          <div class="slide_image_container6 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
+        </div>
+        <div class="slide slide7">
+          <div class="slide_image_container7 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
+        </div>
+        <div class="slide slide8">
+          <div class="slide_image_container8 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
+        </div>
+        <div class="slide slide9">
+          <div class="slide_image_container9 slide_image_container">
+            <img src="https://picsum.photos/300/700" alt="" />
+            <div class="top_cover"></div>
+            <div class="bottom_cover"></div>
+          </div>
         </div>
       </div>
       <p class="arrow left"><i class="fa-solid fa-angles-left"></i></p>
@@ -170,6 +245,43 @@
         <i class="fa-solid fa-angles-right"></i>
       </p>
     </div>
+    <div id="contact">
+      <h2>Contact Me!</h2>
+      <form id="contact_form" action="">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Your name:"
+          required
+          minlength="3"
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your e-mail address"
+          required
+          minlength="6"
+        />
+        <textarea
+          name="message"
+          id="meggage"
+          cols="30"
+          rows="10"
+          placeholder="Enter your message:"
+        ></textarea>
+        <button type="submit">Send!</button>
+      </form>
+      <i id="close_form" class="fa-solid fa-xmark"></i>
+    </div>
+    <hr />
+    <footer>
+      <h3>DKMS&nbsp;Websites&nbsp;2022&nbsp;&copy;</h3>
+      <a href="http://www.dkms.online/" target="_blank"
+        ><h3>http://www.dkms.online/</h3></a
+      >
+    </footer>
     <script src="./JS/app.js"></script>
   </body>
 </html>

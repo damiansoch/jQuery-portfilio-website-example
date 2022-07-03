@@ -157,29 +157,30 @@ $(function () {
     });
 });
 // gallery
+
 let counter = 0;
 $(function () {
   const counterCheck = () => {
     if (counter <= 0) {
       $(".left").css({
         "pointer-events": "none",
-        color: "gray",
+        color: "transparent",
       });
     } else {
       $(".left").css({
         "pointer-events": "all",
-        color: "black",
+        color: "white",
       });
     }
     if (counter >= 2) {
       $(".right").css({
         "pointer-events": "none",
-        color: "gray",
+        color: "transparent",
       });
     } else {
       $(".right").css({
         "pointer-events": "all",
-        color: "black",
+        color: "white",
       });
     }
   };
@@ -194,4 +195,28 @@ $(function () {
     counterCheck();
     $(".gallery").stop().animate({ left: "-=100%" }, 700);
   });
+});
+//gallery slides
+
+const imgGalleryContainers = $(".slide_image_container");
+$(imgGalleryContainers).mouseenter(function (event) {
+  $(event.target).stop().slideUp();
+  $(event.target).siblings(".top_cover").stop().slideUp();
+  $(event.target).siblings(".bottom_cover").stop().slideUp();
+});
+$(imgGalleryContainers).mouseleave(function (event) {
+  $(event.target).stop().slideDown();
+  $(event.target).siblings(".top_cover").stop().slideDown();
+  $(event.target).siblings(".bottom_cover").stop().slideDown();
+});
+//contact
+const contactForm = $("#contact");
+const contactBtn = $("#contact_button");
+const closeForm = $("#close_form");
+$(contactForm).slideUp();
+$(contactBtn).on("click", function () {
+  $(contactForm).slideToggle();
+});
+$(closeForm).on("click", function () {
+  $(contactForm).slideUp();
 });
