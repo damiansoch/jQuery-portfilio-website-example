@@ -10,6 +10,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -112,6 +116,7 @@ nav ul .underline {
   display: -ms-flexbox;
   display: flex;
   width: 100vw;
+  overflow: hidden;
 }
 
 #home .left-panel,
@@ -182,7 +187,7 @@ nav ul .underline {
 
 #about .slideshow_container {
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   margin-top: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -209,19 +214,31 @@ nav ul .underline {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 50vh;
+  height: 55vh;
+}
+
+@media only screen and (max-width: 700px) {
+  #about .cards_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-bottom: 2rem;
+  }
 }
 
 #about .cards_container .card {
-  width: 20rem;
-  height: 25rem;
+  width: 24%;
+  height: 70%;
   background-color: #292929;
   position: relative;
   overflow: hidden;
@@ -245,19 +262,19 @@ nav ul .underline {
   text-align: center;
   color: white;
   font-size: 1.2rem;
+  margin-bottom: 5rem;
 }
 
 @media only screen and (max-width: 700px) {
   #about .cards_container .card {
-    width: 15rem;
+    width: 90%;
+    min-height: 25%;
     font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 550px) {
   #about .cards_container .card {
-    width: 10rem;
-    height: 15rem;
     font-size: 0.8rem;
   }
 }
@@ -271,7 +288,7 @@ nav ul .underline {
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 4px;
   background: #000046;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
@@ -286,7 +303,7 @@ nav ul .underline {
   position: absolute;
   top: 0;
   right: 0;
-  width: 2px;
+  width: 4px;
   height: 100%;
   background: #000046;
   /* fallback for old browsers */
@@ -294,8 +311,8 @@ nav ul .underline {
   background: -webkit-gradient(linear, left top, right top, from(#1cb5e0), to(#000046));
   background: linear-gradient(to right, #1cb5e0, #000046);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-transform: translateY(-25rem);
-          transform: translateY(-25rem);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 #about .cards_container .card .bottom {
@@ -303,7 +320,7 @@ nav ul .underline {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 4px;
   background: #00f260;
   /* fallback for old browsers */
   background: #000046;
@@ -312,15 +329,15 @@ nav ul .underline {
   background: -webkit-gradient(linear, left top, right top, from(#1cb5e0), to(#000046));
   background: linear-gradient(to right, #1cb5e0, #000046);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-transform: translateX(-20rem);
-          transform: translateX(-20rem);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 #about .cards_container .card .left {
   position: absolute;
   top: 0;
   left: 0;
-  width: 2px;
+  width: 4px;
   height: 100%;
   background: #00f260;
   /* fallback for old browsers */
@@ -330,13 +347,13 @@ nav ul .underline {
   background: -webkit-gradient(linear, left top, right top, from(#1cb5e0), to(#000046));
   background: linear-gradient(to right, #1cb5e0, #000046);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-transform: translateY(25rem);
-          transform: translateY(25rem);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
 
 .gallery_window {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -408,9 +425,13 @@ nav ul .underline {
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.3;
+  opacity: 0.15;
   background-color: black;
-  pointer-events: all;
+  pointer-events: auto;
+}
+
+.gallery_window .gallery .slide .slide_image_container .top_cover:hover {
+  pointer-events: none;
 }
 
 .gallery_window .gallery .slide .slide_image_container .bottom_cover {
@@ -419,9 +440,13 @@ nav ul .underline {
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.3;
+  opacity: 0.15;
   background-color: black;
-  pointer-events: all;
+  pointer-events: auto;
+}
+
+.gallery_window .gallery .slide .slide_image_container .bottom_cover:hover {
+  pointer-events: none;
 }
 
 .gallery_window .arrow {
@@ -448,6 +473,30 @@ nav ul .underline {
 
 .gallery_window .right {
   right: 1rem;
+}
+
+.gallery_window .fullScrImg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  pointer-events: none;
+}
+
+.gallery_window .fullScrImg img {
+  width: 80%;
+  height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  margin-top: 1rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 #contact {
@@ -559,6 +608,8 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

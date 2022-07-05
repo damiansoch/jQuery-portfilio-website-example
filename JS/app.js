@@ -104,55 +104,55 @@ $(function () {
   $(".card1")
     .stop()
     .mouseenter(function () {
-      $(".top1").stop().animate({ left: "-20rem" }, 600),
-        $(".right1").stop().animate({ top: "25rem" }, 600),
-        $(".bottom1").stop().animate({ left: "20rem" }, 600),
-        $(".left1").stop().animate({ top: "-25rem" }, 600);
+      $(".top1").stop().animate({ left: "-100%" }, 600),
+        $(".right1").stop().animate({ top: "100%" }, 600),
+        $(".bottom1").stop().animate({ left: "100%" }, 600),
+        $(".left1").stop().animate({ top: "-100%" }, 600);
       $(".card1").css({ transform: "scale(1.1)" }, 600);
     });
   $(".card1")
     .stop()
     .mouseleave(function () {
-      $(".top1").stop().animate({ left: "20rem" }, 600),
-        $(".right1").stop().animate({ top: "-25rem" }, 600),
-        $(".bottom1").stop().animate({ left: "-20rem" }, 600),
-        $(".left1").stop().animate({ top: "25rem" }, 600);
+      $(".top1").stop().animate({ left: "100%" }, 600),
+        $(".right1").stop().animate({ top: "-100%" }, 600),
+        $(".bottom1").stop().animate({ left: "-100%" }, 600),
+        $(".left1").stop().animate({ top: "100%" }, 600);
       $(".card1").css({ transform: "scale(1)" }, 600);
     });
   $(".card2")
     .stop()
     .mouseenter(function () {
-      $(".top2").stop().animate({ left: "-20rem" }, 600),
-        $(".right2").stop().animate({ top: "25rem" }, 600),
-        $(".bottom2").stop().animate({ left: "20rem" }, 600),
-        $(".left2").stop().animate({ top: "-25rem" }, 600);
+      $(".top2").stop().animate({ left: "-100%" }, 600),
+        $(".right2").stop().animate({ top: "100%" }, 600),
+        $(".bottom2").stop().animate({ left: "100%" }, 600),
+        $(".left2").stop().animate({ top: "-100%" }, 600);
       $(".card2").css({ transform: "scale(1.1)" }, 600);
     });
   $(".card2")
     .stop()
     .mouseleave(function () {
-      $(".top2").stop().animate({ left: "20rem" }, 600),
-        $(".right2").stop().animate({ top: "-25rem" }, 600),
-        $(".bottom2").stop().animate({ left: "-20rem" }, 600),
-        $(".left2").stop().animate({ top: "25rem" }, 600);
+      $(".top2").stop().animate({ left: "100%" }, 600),
+        $(".right2").stop().animate({ top: "-100%" }, 600),
+        $(".bottom2").stop().animate({ left: "-100%" }, 600),
+        $(".left2").stop().animate({ top: "100%" }, 600);
       $(".card2").css({ transform: "scale(1)" }, 600);
     });
   $(".card3")
     .stop()
     .mouseenter(function () {
-      $(".top3").stop().animate({ left: "-20rem" }, 600),
-        $(".right3").stop().animate({ top: "25rem" }, 600),
-        $(".bottom3").stop().animate({ left: "20rem" }, 600),
-        $(".left3").stop().animate({ top: "-25rem" }, 600);
+      $(".top3").stop().animate({ left: "-100%" }, 600),
+        $(".right3").stop().animate({ top: "100%" }, 600),
+        $(".bottom3").stop().animate({ left: "100%" }, 600),
+        $(".left3").stop().animate({ top: "-100%" }, 600);
       $(".card3").css({ transform: "scale(1.1)" }, 600);
     });
   $(".card3")
     .stop()
     .mouseleave(function () {
-      $(".top3").stop().animate({ left: "20rem" }, 600),
-        $(".right3").stop().animate({ top: "-25rem" }, 600),
-        $(".bottom3").stop().animate({ left: "-20rem" }, 600),
-        $(".left3").stop().animate({ top: "25rem" }, 600);
+      $(".top3").stop().animate({ left: "100%" }, 600),
+        $(".right3").stop().animate({ top: "-100%" }, 600),
+        $(".bottom3").stop().animate({ left: "-100%" }, 600),
+        $(".left3").stop().animate({ top: "100%" }, 600);
       $(".card3").css({ transform: "scale(1)" }, 600);
     });
 });
@@ -209,6 +209,22 @@ $(imgGalleryContainers).mouseleave(function (event) {
   $(event.target).siblings(".top_cover").stop().slideDown();
   $(event.target).siblings(".bottom_cover").stop().slideDown();
 });
+// gallery img fullscreen
+
+const imgContainer = $(".slide_image_container");
+const images = $(".slide_image_container");
+$(imgContainer).on("click", function (event) {
+  const Img = event.target;
+  const ImgSrc = $(Img).attr("src");
+  $(".fullScrImg").stop().fadeIn(800);
+  $(".fullScrImg").css("pointer-events", "all");
+  $("#image_full_screen").attr("src", ImgSrc);
+});
+$(".fullScrImg").on("click", function () {
+  $(this).css("pointer-events", "none");
+  $(this).stop().fadeOut(800);
+});
+
 //contact
 const contactForm = $("#contact");
 const contactBtn = $("#contact_button");
