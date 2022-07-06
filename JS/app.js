@@ -207,23 +207,19 @@ const isTouchDevice = () => {
   );
 };
 
-if (isTouchDevice) {
-  $(".top_cover").css("display", "none");
-  $(".bottom_cover").css("display", "none");
-} else {
-  //if not touch, additional animation
-  const imgGalleryContainers = $(".slide_image_container");
-  $(imgGalleryContainers).mouseenter(function (event) {
-    $(event.target).stop().slideUp();
-    $(event.target).siblings(".top_cover").stop().slideUp();
-    $(event.target).siblings(".bottom_cover").stop().slideUp();
-  });
-  $(imgGalleryContainers).mouseleave(function (event) {
-    $(event.target).stop().slideDown();
-    $(event.target).siblings(".top_cover").stop().slideDown();
-    $(event.target).siblings(".bottom_cover").stop().slideDown();
-  });
-}
+//if not touch, additional animation
+const imgGalleryContainers = $(".slide_image_container");
+$(imgGalleryContainers).mouseenter(function (event) {
+  $(event.target).stop().slideUp();
+  $(event.target).siblings(".top_cover").stop().slideUp();
+  $(event.target).siblings(".bottom_cover").stop().slideUp();
+});
+$(imgGalleryContainers).mouseleave(function (event) {
+  $(event.target).stop().slideDown();
+  $(event.target).siblings(".top_cover").stop().slideDown();
+  $(event.target).siblings(".bottom_cover").stop().slideDown();
+});
+
 // gallery img fullscreen
 
 const imgContainer = $(".slide_image_container");
